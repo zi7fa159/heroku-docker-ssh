@@ -5,7 +5,11 @@ RUN apt-get install npm -y
 RUN apt-get install build-essential -y
 RUN apt-get install nano -y
 RUN apt-get install neofetch -y
+RUN apt-get install git -y
+RUN apt-get install curl -y
+RUN apt-get install wget -y
 RUN apt-get install sudo -y
+RUN echo y | unminimize
 RUN apt-get clean && apt-get autoclean && apt-get autoremove -y
 RUN mkdir /root/.ssh
 COPY authorized_keys /root/.ssh/authorized_keys
