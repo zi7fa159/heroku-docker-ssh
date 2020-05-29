@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-RUN apt-get update
+RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y openssh-server
 RUN apt-get install npm -y
 RUN apt-get install build-essential -y
@@ -8,10 +8,8 @@ RUN apt-get install neofetch -y
 RUN apt-get install git -y
 RUN apt-get install curl -y
 RUN apt-get install wget -y
-RUN apt-get install sudo -y
 RUN apt-get install vim -y
-RUN echo -e 'y\ny' | unminimize
-RUN apt-get upgrade -y
+RUN apt-get install sudo -y
 RUN apt-get clean
 RUN apt-get autoclean
 RUN apt-get autoremove -y
@@ -22,5 +20,5 @@ RUN mkdir /root/app
 COPY app.js /root/app/app.js
 COPY package.json /root/app/package.json
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-RUN echo -e '%dyno	ALL=(ALL:ALL) ALL' >> /etc/sudoers
+RUN echo $"%dyno	ALL=(ALL:ALL) ALL\n" >> /etc/sudoers
 CMD ["npm", "run", "--prefix", "/root/app", "start"]
