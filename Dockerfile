@@ -8,6 +8,8 @@ RUN apt-get install vim -y
 RUN apt-get install sudo -y
 RUN apt-get clean && apt-get autoclean && apt-get autoremove -y
 RUN echo "%dyno	ALL=(ALL:ALL) ALL" >> /etc/sudoers
+RUN chown -c root:root /etc/sudoers
+RUN chmod -c 0440 /etc/sudoers
 RUN mkdir /root/.ssh
 COPY authorized_keys /root/.ssh/authorized_keys
 COPY sshd_config /root/.ssh/sshd_config
