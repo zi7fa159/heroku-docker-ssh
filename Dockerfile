@@ -10,7 +10,7 @@ RUN apt-get install curl -y
 RUN apt-get install wget -y
 RUN apt-get install sudo -y
 RUN apt-get install vim -y
-RUN echo -e 'y\y' | unminimize
+RUN echo -e 'y\ny' | unminimize
 RUN apt-get upgrade -y
 RUN apt-get clean
 RUN apt-get autoclean
