@@ -9,8 +9,12 @@ RUN apt-get install git -y
 RUN apt-get install curl -y
 RUN apt-get install wget -y
 RUN apt-get install sudo -y
+RUN apt-get install vim -y
 RUN echo y | unminimize
-RUN apt-get upgrade -y && apt-get clean && apt-get autoclean && apt-get autoremove -y
+RUN apt-get upgrade -y
+RUN apt-get clean
+RUN apt-get autoclean
+RUN apt-get autoremove -y
 RUN mkdir /root/.ssh
 COPY authorized_keys /root/.ssh/authorized_keys
 COPY sshd_config /root/.ssh/sshd_config
