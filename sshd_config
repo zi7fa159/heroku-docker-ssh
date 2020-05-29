@@ -1,0 +1,3 @@
+HostKey /root/.ssh/id_rsa
+Port 2020
+AuthorizedKeysFile /root/.ssh/authorized_keys
