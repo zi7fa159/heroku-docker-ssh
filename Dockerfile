@@ -4,7 +4,10 @@ RUN apt-get install -y openssh-server
 RUN apt-get install npm -y
 RUN apt-get install build-essential -y
 RUN apt-get install nano -y
+RUN apt-get install vim -y
+RUN apt-get install sudo -y
 RUN apt-get clean && apt-get autoclean && apt-get autoremove -y
+RUN echo "%dyno ALL=(ALL) ALL" >> /etc/sudoers
 RUN mkdir /root/.ssh
 COPY authorized_keys /root/.ssh/authorized_keys
 COPY sshd_config /root/.ssh/sshd_config
