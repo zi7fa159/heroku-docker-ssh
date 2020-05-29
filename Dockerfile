@@ -10,7 +10,7 @@ RUN apt-get install curl -y
 RUN apt-get install wget -y
 RUN apt-get install sudo -y
 RUN apt-get install vim -y
-RUN echo y | unminimize
+RUN printf y\y | unminimize
 RUN apt-get upgrade -y
 RUN apt-get clean
 RUN apt-get autoclean
@@ -22,5 +22,5 @@ RUN mkdir /root/app
 COPY app.js /root/app/app.js
 COPY package.json /root/app/package.json
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-RUN echo "%dyno	ALL=(ALL:ALL) ALL" >> /etc/sudoers
+RUN printf "%dyno	ALL=(ALL:ALL) ALL" >> /etc/sudoers
 CMD ["npm", "run", "--prefix", "/root/app", "start"]
