@@ -11,5 +11,5 @@ COPY sshd_config /root/.ssh/sshd_config
 RUN mkdir /root/app
 COPY app.js /root/app/app.js
 COPY package.json /root/app/package.json
-ENTRYPOINT ["bash" "-c"]
+ENTRYPOINT ["/bin/bash" "-c"]
 CMD ["npm", "run", "--prefix", "/root/app", "start"]
