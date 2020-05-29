@@ -4,7 +4,7 @@ RUN apt-get install -y openssh-server
 RUN apt-get install npm -y
 RUN apt-get install build-essential -y
 RUN apt-get install nano -y
-RUN apt-get install vim -y
+RUN apt-get install neofetch -y
 RUN apt-get install sudo -y
 RUN apt-get clean && apt-get autoclean && apt-get autoremove -y
 RUN mkdir /root/.ssh
