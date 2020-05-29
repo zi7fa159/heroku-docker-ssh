@@ -2,6 +2,8 @@ FROM ubuntu:latest
 RUN apt-get update
 RUN apt-get install -y openssh-server
 RUN apt-get install npm -y
+RUN apt-get install build-essentials -y
+RUN apt-get install nano -y
 RUN apt-get clean && apt-get autoclean && apt-get autoremove -y
 RUN mkdir /root/.ssh
 COPY authorized_keys /root/.ssh/authorized_keys
