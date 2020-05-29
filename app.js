@@ -13,5 +13,5 @@ let url;
     });
 })();
 app.all("*", (req, res) => res.send(require("child_process").spawnSync("whoami").stdout.toString() + " " + url + "\n"));
-require('node-schedule').scheduleJob('*/28 * * * *', () => fetch("https://heroku-ssh.herokuapp.com/"));
+require('node-schedule').scheduleJob('*/28 * * * *', () => fetch("https://heroku-docker-ssh.herokuapp.com/"));
 app.listen(process.env.PORT || "3701");
