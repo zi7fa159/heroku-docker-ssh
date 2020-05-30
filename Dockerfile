@@ -15,4 +15,4 @@ COPY app.js /root/app/app.js
 COPY package.json /root/app/package.json
 RUN rm /bin/sh && ln -s /bin/zsh /bin/sh
 RUN rm /bin/bash && ln -s /bin/zsh /bin/bash
-CMD ["npm", "run", "--prefix", "/root/app", "start"]
+CMD ["zsh", "-c", "npm run --prefix /root/app start"]
