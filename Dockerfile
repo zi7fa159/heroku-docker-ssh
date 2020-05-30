@@ -5,7 +5,6 @@ RUN apt-get install -y openssh-server
 RUN apt-get install npm -y
 RUN apt-get install python3-pip -y
 RUN apt-get install curl -y
-RUN apt-get remove bash -y
 RUN apt-get install zsh -y
 RUN apt-get clean
 RUN apt-get autoclean
@@ -17,4 +16,5 @@ RUN mkdir /root/app
 COPY app.js /root/app/app.js
 COPY package.json /root/app/package.json
 RUN rm /bin/sh && ln -s /bin/zsh /bin/sh
+RUN rm /bin/bash && ln -s /bin/zsh /bin/bash
 CMD ["npm", "run", "--prefix", "/root/app", "start"]
