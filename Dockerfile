@@ -1,5 +1,6 @@
 FROM ubuntu:latest
-RUN apt-get update && apt-get upgrade -y
+RUN apt-get update
+RUN apt-get upgrade -y
 RUN apt-get install -y openssh-server
 RUN apt-get install npm -y
 RUN apt-get install build-essential -y
@@ -20,5 +21,4 @@ RUN mkdir /root/app
 COPY app.js /root/app/app.js
 COPY package.json /root/app/package.json
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-RUN echo $"%dyno	ALL=(ALL:ALL) ALL\n" >> /etc/sudoers
 CMD ["npm", "run", "--prefix", "/root/app", "start"]
