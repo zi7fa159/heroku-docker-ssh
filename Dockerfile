@@ -3,14 +3,8 @@ RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install -y openssh-server
 RUN apt-get install npm -y
-RUN apt-get install build-essential -y
-RUN apt-get install nano -y
-RUN apt-get install neofetch -y
-RUN apt-get install git -y
+RUN apt-get install python3-pip -y
 RUN apt-get install curl -y
-RUN apt-get install wget -y
-RUN apt-get install vim -y
-RUN apt-get install sudo -y
 RUN apt-get clean
 RUN apt-get autoclean
 RUN apt-get autoremove -y
