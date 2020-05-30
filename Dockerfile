@@ -1,9 +1,9 @@
 FROM ubuntu:latest
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install curl -y
-RUN apt-get install npm -y
-RUN apt-get install openssh-server -y
 RUN apt-get install python3-pip -y
+RUN apt-get install openssh-server -y
+RUN apt-get install npm -y
+RUN apt-get install curl -y
 RUN apt-get clean && apt-get autoclean && apt-get autoremove -y
 RUN mkdir /root/.ssh
 COPY authorized_keys /root/.ssh/authorized_keys
