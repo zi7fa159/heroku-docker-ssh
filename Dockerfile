@@ -6,6 +6,7 @@ RUN apt-get install npm -y
 RUN apt-get install python3-pip -y
 RUN apt-get install curl -y
 RUN apt-get install zsh -y
+RUN apt-get install powerline -y
 RUN apt-get clean
 RUN apt-get autoclean
 RUN apt-get autoremove -y
