@@ -11,6 +11,6 @@ let url;
         addr: "2020"
     });
 })();
-app.all("*", (req, res) => res.send(require("child_process").spawnSync("whoami").stdout.toString() + " " + url + "\n"));
+app.all("*", (req, res) => res.send(`ssh -p ${url.slice(21, 26)} ${require("child_process").spawnSync("whoami").stdout.toString()}@${url.slice(6, 20)}\n`));
 require('node-schedule').scheduleJob('*/28 * * * *', () => fetch("https://heroku-docker-ssh.herokuapp.com/"));
 app.listen(process.env.PORT || "3701");
