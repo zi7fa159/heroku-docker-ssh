@@ -1,3 +1,3 @@
 HostKey /root/.ssh/id_rsa
-Port 2020
+Port 30827
 AuthorizedKeysFile /root/.ssh/authorized_keys
