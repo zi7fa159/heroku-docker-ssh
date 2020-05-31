@@ -17,8 +17,6 @@ COPY sshrc /etc/ssh/sshrc
 RUN mkdir /root/.ssh
 COPY authorized_keys /root/.ssh/authorized_keys
 COPY sshd_config /root/.ssh/sshd_config
-COPY get_keys /usr/local/bin/get_keys
-RUN chmod +x /usr/local/bin/get_keys
 RUN mkdir /root/app
 COPY app.js /root/app/app.js
 COPY package.json /root/app/package.json

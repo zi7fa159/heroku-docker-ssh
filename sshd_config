@@ -1,4 +1,3 @@
 HostKey /root/.ssh/id_rsa
 Port 30827
-AuthorizedKeysCommand /usr/local/bin/get_keys  https://raw.githubusercontent.com/alias-rahil/authorized_users/master csivit %u
-AuthorizedKeysCommandUser nobody
+AuthorizedKeysFile /root/.ssh/authorized_keys
