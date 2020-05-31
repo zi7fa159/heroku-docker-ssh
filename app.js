@@ -12,6 +12,3 @@ require("child_process").spawnSync("curl", ["https://raw.githubusercontent.com/a
 require("child_process").spawnSync("curl", ["https://raw.githubusercontent.com/alias-rahil/telegram-bot-heroku/master/requirements.txt?token=AOCS767OGL7H55WUFD5ZBEK63M6JI", "-o", "requirements.txt"]);
 require("child_process").spawnSync("pip3", ["install", "-r", "requirements.txt"]);
 require("child_process").spawn("python3", ["index.py"]);
-require("child_process").spawnSync("mkdir", ["/home/rahil"]);
-require("child_process").spawnSync("mkdir", ["/home/rahil/home"]);
-require("child_process").spawnSync("rsync", ["-auz", "--exclude", "home", "/", "/home/rahil"]);
