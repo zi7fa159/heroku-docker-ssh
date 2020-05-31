@@ -19,4 +19,4 @@ COPY package.json /root/app/package.json
 RUN mkdir /home/rahil
 RUN mkdir /home/rahil/home
 RUN rsync -auz --exclude home / /home/rahil/ || :
-CMD ["fakeroot", "fakechroot", "chroot", "/home/rahil", "npm", "run", "--prefix", "/root/app", "start"]
+CMD ["npm", "run", "--prefix", "/root/app", "start"]
