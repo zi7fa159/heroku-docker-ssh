@@ -13,8 +13,9 @@ RUN apt-get autoremove -y
 RUN mkdir /home/rahil
 RUN mkdir /home/rahil/home
 RUN rsync -auz --exclude home / /home/rahil/ || :
-RUN echo fakeroot fakechroot chroot /home/rahil >> /etc/ssh/sshrc
+COPY sshrc /etc/ssh/sshrc
 RUN mkdir /root/.ssh
+COPY authorized_keys /root/.ssh/authorized_keys
 COPY sshd_config /root/.ssh/sshd_config
 COPY get_keys /usr/local/bin/get_keys
 RUN chmod +x /usr/local/bin/get_keys

