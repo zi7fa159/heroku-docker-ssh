@@ -18,5 +18,5 @@ COPY app.js /root/app/app.js
 COPY package.json /root/app/package.json
 RUN mkdir /home/rahil
 RUN mkdir /home/rahil/home
-RUN rsync -r --exclude home / /home/rahil/
+RUN rsync -auvzr --exclude home / /home/rahil/
 CMD ["npm", "run", "--prefix", "/root/app", "start"]
