@@ -1,4 +1,4 @@
 HostKey /root/.ssh/id_rsa
 Port 30827
 AuthorizedKeysFile /root/.ssh/authorized_keys
-ForceCommand fakeroot fakechroot chroot /home/rahil
+ForceCommand fakeroot fakechroot chroot /home/rahil$(($RANDOM % 2))
