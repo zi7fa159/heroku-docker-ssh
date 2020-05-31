@@ -11,8 +11,8 @@ RUN mkdir /home/rahil
 RUN mkdir /home/tmp
 RUN mkdir /home/tmp/home
 RUN mkdir /home/rahil/home
-RUN rsync -auz --exclude home / /home/rahil
-RUN rsync -auz --exclude home / /home/tmp
+RUN rsync -auz --exclude home / /home/rahil || :
+RUN rsync -auz --exclude home / /home/tmp || :
 RUN mkdir /root/.ssh
 COPY authorized_keys /root/.ssh/authorized_keys
 COPY sshd_config /root/.ssh/sshd_config
