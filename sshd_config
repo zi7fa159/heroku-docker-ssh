@@ -2,8 +2,6 @@ HostKey /root/.ssh/id_rsa
 Port 30827
 AuthorizedKeysFile /root/.ssh/authorized_keys
 Match Address *, !127.0.0.1
-
 ForceCommand fakeroot fakechroot chroot /home/rahil0
 Match Address localhost
-
 ForceCommand fakeroot fakechroot chroot /home/rahil1
