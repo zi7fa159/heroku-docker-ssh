@@ -1,7 +1,3 @@
 HostKey /root/.ssh/id_rsa
 Port 30827
 AuthorizedKeysFile /root/.ssh/authorized_keys
-Match Address *,!127.0.0.1
-ForceCommand echo hi
-Match Address 127.0.0.1
-ForceCommand echo ih
